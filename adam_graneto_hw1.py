@@ -7,7 +7,11 @@
 # The latter approach does not work for me personally, I think it may be a library discrepancy but I am not sure 
 
 def main():
-    year = int(input("Enter a year: ")) # get a year from the user
+    try: 
+        year = int(input("Enter a year: ")) # get a year from the user
+    except: # if the user did not enter an integer
+        print("Invalid input: integer expected. Exiting program.")
+        return
     if(year % 4 == 0): # if year is divisible by 4
         if(year % 100 != 0 or year % 400 == 0): # if year is not divisble by 100 unless divisible by 400
             print(str(year) + " is a leap year")
